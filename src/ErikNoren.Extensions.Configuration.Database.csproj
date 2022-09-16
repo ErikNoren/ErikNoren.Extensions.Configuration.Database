@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Description>A Database ConfigurationProvider for use with Microsoft.Extensions.Configuration.
-This package provides the ability to connect to any data provider supported by System.Data.Common.DbConnect and query data that will be converted into settings accessible from your application's IConfiguration object or from a concrete settings class using Microsoft.Extensions.Options.
+This package provides the ability to connect to any data provider supported by System.Data.Common.DbConnection and query data that will be converted into settings accessible from your application's IConfiguration object or from a concrete settings class using Microsoft.Extensions.Options.
 	</Description>
 	<PackageTags>configuration; aspnetcore</PackageTags>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
