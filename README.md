@@ -40,7 +40,7 @@ builder.Configuration.AddSqlServer(config =>
 {
     //If the connection string was defined in an appsettings file, environment variable, etc. it can be retrieved here:
     config.CreateDbConnection = () => new SqlConnection(builder.Configuration.GetConnectionString("DemoConnectionString"));
-    config.CreateQueryDelegate = sqlConn => new ("SELECT SettingKey, SettingValue FROM dbo.Settings", sqlConn);
+    config.CreateQueryDelegate = sqlConn => new SqlCommand("SELECT SettingKey, SettingValue FROM dbo.Settings", sqlConn);
 
     //Define an interval for the SqlServerConfigurationProvider to reconnect to the database and look for updated settings
     config.RefreshInterval = TimeSpan.FromMinutes(30);
