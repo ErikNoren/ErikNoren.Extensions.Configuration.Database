@@ -36,7 +36,7 @@ builder.Configuration.AddDbConnection<SqlConnection>(config =>
 ```csharp
 ...
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddSqlServer(config =>
+builder.Configuration.AddDbConnection<SqlConnection>(config =>
 {
     //If the connection string was defined in an appsettings file, environment variable, etc. it can be retrieved here:
     config.CreateDbConnection = () => new SqlConnection(builder.Configuration.GetConnectionString("DemoConnectionString"));
