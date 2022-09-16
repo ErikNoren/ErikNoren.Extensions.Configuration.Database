@@ -11,7 +11,8 @@ var builder = Host.CreateDefaultBuilder(args);
 builder
     .ConfigureAppConfiguration((hostBuilder, config) =>
     {
-        var test = hostBuilder.Configuration.GetConnectionString("DemoConnectionString");
+        //This is null because no providers have been built yet.
+        //var connectionString = hostBuilder.Configuration.GetConnectionString("DemoConnectionString");
 
         var partialConfig = config.Build();
         var connectionString = partialConfig.GetConnectionString("DemoConnectionString");
@@ -25,6 +26,7 @@ builder
     })
     .ConfigureServices((hostBuilder, services) =>
     {
+        //By the time ConfigureServices is called the configuration providers have been built.
         services.Configure<Settings>(hostBuilder.Configuration.GetSection("AppSettings"));
     });
 
