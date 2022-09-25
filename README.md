@@ -3,6 +3,7 @@
 This library is a Microsoft.Extensions.Configuration provider that reads settings from a database and makes those values
 available via IConfiguration or in a strongly typed class created using Microsoft.Extensions.Options. The provider works
 with System.Data.Common.DbConnection so any derived type should be able to use this, Microsoft.Data.SqlClient included.
+This library is now available on [NuGet](https://www.nuget.org/packages/ErikNoren.Extensions.Configuration.Database).
 
 This provider benefits from the new ASP.NET Core startup in 6.0.0 which allows configuration to be added to and read from
 at the same time. This means we can easily read a connection string from a local appsettings.json file that is then used
